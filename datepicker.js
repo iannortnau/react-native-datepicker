@@ -163,9 +163,10 @@ class DatePicker extends Component {
   }
 
   datePicked() {
+    /*
     if (typeof this.props.onDateChange === 'function') {
       this.props.onDateChange(this.getDateStr(this.state.date), this.state.date);
-    }
+    }*/
   }
 
   getTitleElement() {
@@ -269,13 +270,13 @@ class DatePicker extends Component {
     if (this.state.showA && Platform.OS === 'android'){
       return (
         <DateTimePicker
-            value={this.state.date}
-            mode={mode}
-            minimumDate={minDate && this.getDate(minDate)}
-            maximumDate={maxDate && this.getDate(maxDate)}
-            onChange={this.onDateChange}
-            minuteInterval={minuteInterval}
-            timeZoneOffsetInMinutes={timeZoneOffsetInMinutes ? timeZoneOffsetInMinutes : null}
+          value={this.state.date}
+          mode={mode}
+          minimumDate={minDate && this.getDate(minDate)}
+          maximumDate={maxDate && this.getDate(maxDate)}
+          onChange={this.onDateChange}
+          minuteInterval={minuteInterval}
+          timeZoneOffsetInMinutes={timeZoneOffsetInMinutes ? timeZoneOffsetInMinutes : null}
         />
       );
     }
@@ -320,7 +321,7 @@ class DatePicker extends Component {
               <View style={dateInputStyle}>
                 {this.getTitleElement()}
               </View>
-            :
+              :
               <View/>
           }
           {this._renderIcon()}
